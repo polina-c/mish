@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Stops jaspr processes left from an earlier `website` launch, which
+      // otherwise hold port 8181 and make the new launch fail with
+      // "Could not start the VM service". Used as the website preLaunchTask.
+      "label": "stop website",
+      "type": "shell",
+      "command": "${workspaceFolder}/tool/stop_website.sh",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+        "close": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

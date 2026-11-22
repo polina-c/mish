@@ -4,10 +4,12 @@
     {
       // Runs `jaspr serve` with the debugger attached to the server and the
       // browser app. Needs the Jaspr extension (schultek.jaspr-code).
+      // First stops any jaspr processes left from an earlier launch.
       "name": "website",
       "type": "jaspr",
       "request": "launch",
-      "cwd": "pkgs/website"
+      "cwd": "pkgs/website",
+      "preLaunchTask": "stop website"
     },
     {
       // Builds the site and deploys it to Firebase Hosting with
