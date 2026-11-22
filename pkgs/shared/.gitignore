@@ -1,0 +1,3 @@
+.dart_tool/
+# This is a library package: the website's lockfile pins its dependencies.
+pubspec.lock

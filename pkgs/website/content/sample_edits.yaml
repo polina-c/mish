@@ -1,0 +1,49 @@
+# Sample edits on the website, from top to bottom.
+#
+# Each sample edit starts with "- " and has these fields:
+#
+#   vimeo_id          The number in the video's Vimeo address.
+#   vimeo_access_key  Only for unlisted videos: the code after the number in
+#                     the address (vimeo.com/1110117832/4e7e3098ae). Leave the
+#                     line out for public videos.
+#   vimeo_title       The video's name. Screen readers announce it.
+#   thumbnail_image   An image file in web/images/thumbnails/, 1024x576.
+#   title             The lines on the grey bar, one "- " per line.
+#   description       The lines under it. Optional.
+#
+# In titles and descriptions you can use <b>bold</b>, <i>italic</i> and
+# <a href="https://example.com">links</a>.
+#
+# To reorder sample edits, move a whole block. To add one, copy a block.
+# See content/README.md for more.
+
+sample_edits:
+  - vimeo_id: 1110117832
+    vimeo_access_key: 4e7e3098ae
+    vimeo_title: Salieri and Mozart (Short Film)
+    thumbnail_image: thumbnail_salieri.jpg
+    title:
+      - Award winning short film
+      - <b><i>Salieri and Mozart</i></b>
+    description:
+      - Distributed by <a href="https://www.7palmsentertainment.com/"><b><i>7 Palms Entertainment</i></b></a>. <i>"Young actor develops</i>
+      - <i>a profound character—only to trigger the show manager."</i>
+
+  - vimeo_id: 1111856817
+    vimeo_title: Salieri and Mozart | Official Trailer | Short Film
+    thumbnail_image: thumbnail_salieritrailer.jpg
+    title:
+      - <b>Trailer</b> that got the film
+      - into festivals
+    description:
+      - Festival programmers see tons of submissions. To refresh their
+      - memory of a film—they watch trailer. That has an impact.
+
+  - vimeo_id: 1249036004
+    vimeo_access_key: 446fca590d
+    vimeo_title: Previs Reel 2026
+    thumbnail_image: thumbnail_previsreel.jpg
+    title:
+      - <b>Professional Reel</b>
+    description:
+      - Strong presentation in the labor market.

@@ -1,0 +1,15 @@
+name: shared
+description: Content model and parsers for the Cut for Change website.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  source_span: ^1.10.2
+  yaml: ^3.1.4
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: ^1.33.0
