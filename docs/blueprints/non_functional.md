@@ -3,5 +3,5 @@
 ## Technical stack
 
 Packages: 
-1. website (Jaspr) - UI part of website implementation
-1. shared (Dart) - Dart part of implementation
+1. pkgs/website (Jaspr) - UI part of website implementation
+1. pkgs/shared (Dart) - Dart part of implementation
