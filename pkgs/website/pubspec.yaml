@@ -8,7 +8,7 @@ environment:
   sdk: ^3.13.0
 
 dependencies:
-  # The 0.24 beta matches the installed Jaspr CLI (0.24.0-beta.1), which
+  # The 0.24 beta matches the installed Jaspr CLI (0.24.0-beta.2), which
   # refuses projects on 0.23. beta.2 is needed for `dialog()` with `showModal()`.
   jaspr: ^0.24.0-beta.2
   shared:

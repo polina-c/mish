@@ -17,11 +17,12 @@ You need the Dart SDK 3.13 or later and the Jaspr CLI 0.24 beta. The 0.23 CLI re
 dart pub global activate jaspr_cli 0.24.0-beta.2
 ```
 
+The repository is a [pub workspace](https://dart.dev/tools/pub/workspaces): the root [pubspec.yaml](pubspec.yaml) lists both packages, and they share one `pubspec.lock` at the root. `dart pub get` in any folder installs dependencies for both.
+
 In `pkgs/website`:
 
-1. `dart pub get` installs dependencies.
-2. `jaspr serve` starts a development server at http://localhost:8080. Changes to `content/sample_edits.yaml` show up on reload.
-3. `jaspr build` writes the site to `build/jaspr/`.
+1. `jaspr serve` starts a development server at http://localhost:8080. Changes to `content/sample_edits.yaml` show up on reload.
+2. `jaspr build` writes the site to `build/jaspr/`.
 
 In `pkgs/shared`, `dart test` runs the tests. `dart analyze` checks either package.
 
