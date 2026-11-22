@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    // Dart language support. The Jaspr extension needs it.
+    "Dart-Code.dart-code",
+    // Jaspr support, including the "jaspr" debug type in launch.json.
+    "schultek.jaspr-code",
+    // References in md.
+    "tarasermolenko.fix-refs-vscode",
+  ]
+}

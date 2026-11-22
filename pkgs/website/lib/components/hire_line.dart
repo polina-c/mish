@@ -2,8 +2,10 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../styles/theme.dart';
+import 'copy_button.dart';
 
-/// "Hire Mikhail: Mish@cutforchange.com", with the address as a mail link.
+/// "Hire Mikhail: Mish@cutforchange.com", with the address as a mail link
+/// and a button that copies it.
 class HireLine extends StatelessComponent {
   const HireLine({super.key});
 
@@ -14,9 +16,13 @@ class HireLine extends StatelessComponent {
   Component build(BuildContext context) {
     return p(classes: 'hire', [
       .text('Hire Mikhail: '),
-      a(href: 'mailto:$_mailbox@$_domain', classes: 'hire-email', [
-        span(classes: 'hire-mailbox', [.text(_mailbox)]),
-        .text('@$_domain'),
+      // Keeps the copy button on the same line as the address.
+      span(classes: 'hire-contact', [
+        a(href: 'mailto:$_mailbox@$_domain', classes: 'hire-email', [
+          span(classes: 'hire-mailbox', [.text(_mailbox)]),
+          .text('@$_domain'),
+        ]),
+        const CopyButton(text: '$_mailbox@$_domain', label: 'Copy email address'),
       ]),
     ]);
   }
@@ -31,6 +37,7 @@ class HireLine extends StatelessComponent {
         fontSize: TextSize.intermediate,
         lineHeight: du(114.4),
       ),
+      css('.hire-contact').styles(whiteSpace: .noWrap),
       css('.hire-email').styles(
         color: Palette.greyLight,
         textDecoration: .none,

@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "public": "pkgs/website/build/jaspr",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "packages/**"],
+    "predeploy": "cd \"$PROJECT_DIR/pkgs/website\" && jaspr build"
+  }
+}

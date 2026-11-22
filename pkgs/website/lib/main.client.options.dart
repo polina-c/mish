@@ -6,6 +6,7 @@
 
 import 'package:jaspr/client.dart';
 
+import 'package:website/components/copy_button.dart' deferred as _copy_button;
 import 'package:website/components/sample_edit_card.dart'
     deferred as _sample_edit_card;
 
@@ -27,6 +28,13 @@ import 'package:website/components/sample_edit_card.dart'
 /// ```
 ClientOptions get defaultClientOptions => ClientOptions(
   clients: {
+    'copy_button': ClientLoader(
+      (p) => _copy_button.CopyButton(
+        text: p.get<String>('text'),
+        label: p.get<String>('label'),
+      ),
+      loader: _copy_button.loadLibrary,
+    ),
     'sample_edit_card': ClientLoader(
       (p) => _sample_edit_card.SampleEditCard(
         videoTitle: p.get<String>('videoTitle'),
