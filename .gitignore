@@ -1,4 +1,8 @@
 .dart_tool/
+
 # Firebase CLI deploy cache and logs.
 .firebase/
 firebase-debug*.log
+
+# Website build output.
+pkgs/website/build/

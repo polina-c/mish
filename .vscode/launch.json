@@ -13,12 +13,13 @@
     },
     {
       // Builds the site and deploys it to Firebase Hosting with
-      // tool/deploy.dart. Needs the Firebase CLI, logged in with access to
-      // the mish-web project. Runs in a terminal so the CLI can prompt.
+      // pkgs/hosting/deploy.dart. Needs the Firebase CLI, logged in with
+      // access to the mish-web project. Runs in a terminal so the CLI can
+      // prompt.
       "name": "deploy",
       "type": "dart",
       "request": "launch",
-      "program": "tool/deploy.dart",
+      "program": "pkgs/hosting/deploy.dart",
       "console": "terminal"
     }
   ]

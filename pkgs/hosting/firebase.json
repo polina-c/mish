@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "public": "../website/build/jaspr",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "packages/**"],
+    "predeploy": "cd \"$PROJECT_DIR/../website\" && jaspr build"
+  }
+}

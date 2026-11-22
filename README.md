@@ -8,6 +8,7 @@ To update the list of sample edits, see [pkgs/website/content/README.md](pkgs/we
 
 1. [pkgs/website](pkgs/website) is the site, built with [Jaspr](https://jaspr.site) in static mode: the page is rendered to HTML at build time, and only the video player and the copy button run in the browser.
 2. [pkgs/shared](pkgs/shared) is plain Dart: the content model, the parser for `sample_edits.yaml`, and the parser for the HTML tags allowed in titles and descriptions. The unit tests are here.
+3. [pkgs/hosting](pkgs/hosting) isn't a Dart package. It has the Firebase Hosting configuration and the deploy script; see [Deploying](#deploying).
 
 ## Development
 
@@ -28,11 +29,11 @@ In `pkgs/shared`, `dart test` runs the tests. `dart analyze` checks either packa
 
 ## Deploying
 
-The site is on Firebase Hosting in the [mish-web](https://console.firebase.google.com/project/mish-web) project, at https://mish-web.web.app. [.firebaserc](.firebaserc) selects the project, and [firebase.json](firebase.json) configures the hosting.
+The site is on Firebase Hosting in the [mish-web](https://console.firebase.google.com/project/mish-web) project, at https://mish-web.web.app. The Firebase files are in [pkgs/hosting](pkgs/hosting): [.firebaserc](pkgs/hosting/.firebaserc) selects the project, and [firebase.json](pkgs/hosting/firebase.json) configures the hosting.
 
 You need the [Firebase CLI](https://firebase.google.com/docs/cli), logged in with `firebase login` to an account that has access to the project.
 
-To deploy, run the "deploy" configuration in VS Code, or `firebase deploy --only hosting` in the repository root. Both run `jaspr build` first, as the predeploy hook in `firebase.json`, so the deploy has whatever is in the working tree, committed or not.
+To deploy, run the "deploy" configuration in VS Code, or `firebase deploy --only hosting` in `pkgs/hosting`. Both run `jaspr build` first, as the predeploy hook in `firebase.json`, so the deploy has whatever is in the working tree, committed or not.
 
 The deploy uploads `pkgs/website/build/jaspr/` without the `packages/` folder and the dot-files, which are build leftovers that the page doesn't load. The page sets `<base href="/">`, so a different host has to serve it from the root of the domain too.
 
