@@ -1,6 +1,7 @@
 name: shared
 description: Content model and parsers for the Cut for Change website.
 publish_to: none
+resolution: workspace
 version: 0.1.0
 
 environment:
