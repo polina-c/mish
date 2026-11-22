@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Runs `jaspr serve` with the debugger attached to the server and the
+      // browser app. Needs the Jaspr extension (schultek.jaspr-code).
+      "name": "Website",
+      "type": "jaspr",
+      "request": "launch",
+      "cwd": "pkgs/website"
+    }
+  ]
+}
