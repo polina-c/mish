@@ -10,4 +10,4 @@ Packages:
 
 Hosting is here: https://console.firebase.google.com/project/mish-web
 
-Deployment can be started via VSCode config 'deploy'.
+Deploy with VSCode config 'deploy'.
