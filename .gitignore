@@ -4,6 +4,7 @@
 .firebase/
 firebase-debug*.log
 
-# Website build output.
+# Website build output, and its copy that the deploy uploads.
 pkgs/website/build/
+pkgs/hosting/public/
 .DS_Store

@@ -10,6 +10,10 @@ import '../styles/theme.dart';
 /// page. Clicking anywhere around the player, the close button or pressing
 /// Escape closes it, which also stops the video.
 ///
+/// On a phone the player is too narrow for Vimeo to show its fullscreen
+/// button, so a narrow player opens with the other controls turned off. See
+/// [_compactControls].
+///
 /// This runs in the browser. [title] and [description] are rendered on the
 /// server and passed in as they are.
 @client
@@ -188,15 +192,49 @@ class SampleEditCard extends StatefulComponent {
   ];
 }
 
+/// Players narrower than this, in CSS pixels, open with [_compactControls].
+///
+/// Below about 432 px, Vimeo keeps at most one control next to the progress
+/// bar and hides the others, fullscreen included, behind a "Show controls"
+/// arrow.
+const _compactPlayerWidth = 440;
+
+/// Vimeo player options that turn off every control but fullscreen, so a
+/// narrow player shows the fullscreen button instead of the arrow.
+///
+/// `volume=0` only removes the mute button: the video still plays with sound.
+const _compactControls = {
+  'volume': '0',
+  'cc': '0',
+  'quality_selector': '0',
+  'speed': '0',
+  'pip': '0',
+  'transcript': '0',
+};
+
 class _SampleEditCardState extends State<SampleEditCard> {
   final _player = GlobalNodeKey<web.HTMLDialogElement>();
 
   /// Whether the player's iframe is in the page. Removing it stops the video.
   bool _playing = false;
 
+  /// Whether the player opened narrower than [_compactPlayerWidth].
+  bool _compact = false;
+
   void _open() {
-    setState(() => _playing = true);
-    _player.currentNode?.showModal();
+    final player = _player.currentNode;
+    // The dialog has its size only once it's open.
+    player?.showModal();
+    setState(() {
+      _playing = true;
+      _compact = player != null && player.clientWidth < _compactPlayerWidth;
+    });
+  }
+
+  String get _embedUrl {
+    if (!_compact) return component.embedUrl;
+    final url = Uri.parse(component.embedUrl);
+    return url.replace(queryParameters: {...url.queryParameters, ..._compactControls}).toString();
   }
 
   void _close() => _player.currentNode?.close();
@@ -244,7 +282,7 @@ class _SampleEditCardState extends State<SampleEditCard> {
           ),
           if (_playing)
             iframe(
-              src: component.embedUrl,
+              src: _embedUrl,
               allow: 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share',
               referrerPolicy: .strictOriginWhenCrossOrigin,
               attributes: {'title': component.videoTitle},
