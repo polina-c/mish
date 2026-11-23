@@ -6,3 +6,4 @@ firebase-debug*.log
 
 # Website build output.
 pkgs/website/build/
+.DS_Store
