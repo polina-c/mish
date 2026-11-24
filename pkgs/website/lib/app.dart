@@ -97,6 +97,9 @@ class App extends StatelessComponent {
       fontWeight: .w500,
       lineHeight: du(171.2),
     ),
+    // Extra room around the closing hire line, on top of its own top margin
+    // and the page's bottom padding.
+    css('.page > footer').styles(padding: .symmetric(vertical: du(300))),
     css('.sample-edit-list').styles(
       display: .flex,
       padding: .zero,
