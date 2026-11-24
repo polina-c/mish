@@ -101,7 +101,7 @@ class App extends StatelessComponent {
       lineHeight: du(171.2),
     ),
     css('.version').styles(
-      margin: .only(top: du(300)),
+      margin: .only(top: du(500)),
       color: Palette.greyMedium,
       fontSize: TextSize.small,
       lineHeight: TextSize.smallLineHeight,
