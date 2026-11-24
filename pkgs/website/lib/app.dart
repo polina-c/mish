@@ -48,7 +48,10 @@ class App extends StatelessComponent {
           ],
         ),
       ]),
-      footer([const HireLine()]),
+      footer([
+        const HireLine(),
+        p(classes: 'version', [.text('v 1.02')]),
+      ]),
     ]);
   }
 
@@ -97,9 +100,12 @@ class App extends StatelessComponent {
       fontWeight: .w500,
       lineHeight: du(171.2),
     ),
-    // Extra room around the closing hire line, on top of its own top margin
-    // and the page's bottom padding.
-    css('.page > footer').styles(padding: .symmetric(vertical: du(300))),
+    css('.version').styles(
+      margin: .only(top: du(300)),
+      color: Palette.greyMedium,
+      fontSize: TextSize.small,
+      lineHeight: TextSize.smallLineHeight,
+    ),
     css('.sample-edit-list').styles(
       display: .flex,
       padding: .zero,
