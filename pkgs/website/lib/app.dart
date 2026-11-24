@@ -103,9 +103,9 @@ class App extends StatelessComponent {
     css('.sample-edit-list').styles(
       display: .flex,
       padding: .zero,
-      margin: .only(top: du(100.45)),
+      margin: .only(top: du(140)),
       flexDirection: .column,
-      gap: .row(du(158)),
+      gap: .row(du(208)),
       listStyle: .none,
     ),
     css.media(narrowScreen, [
