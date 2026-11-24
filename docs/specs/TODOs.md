@@ -2,7 +2,6 @@
 
 ## Decisions to check
 
-1. [ ] **Jaspr version.** The site uses Jaspr 0.24.0-beta.2 because the installed CLI (0.24.0-beta.1) won't build projects on the stable 0.23. Beta.2 is also the first version with `showModal()` on dialogs. Move `jaspr` and `jaspr_builder` in [pkgs/website/pubspec.yaml](../../pkgs/website/pubspec.yaml) to the stable 0.24 once it's out.
 2. [ ] **YAML format.** The manager invited changes, so `sample_edits.yaml` changed:
    1. Sample edits are a list, so moving a block reorders them.
    2. `title` and `description` take any number of lines.
