@@ -103,8 +103,8 @@ class App extends StatelessComponent {
     css('.version').styles(
       margin: .only(top: du(500)),
       color: Palette.greyMedium,
-      fontSize: TextSize.small,
-      lineHeight: TextSize.smallLineHeight,
+      fontSize: du(66),
+      lineHeight: du(75.9),
     ),
     css('.sample-edit-list').styles(
       display: .flex,
