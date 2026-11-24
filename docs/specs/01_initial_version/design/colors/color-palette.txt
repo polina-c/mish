@@ -1,0 +1,30 @@
+black
+#000000FF
+CMYK 75 68 67 90
+
+nearly-black
+#080808FF (03)
+
+grey-dark
+#262626FF (15)
+
+grey-medium
+#575757FF (34)
+CMYK 58 49 49 16
+
+grey-light
+#A8A8A8FF (66)
+CMYK 22 17 18 0
+
+white
+#FFFFFFFF
+
+accent-dark
+#2A1706FF
+
+accent-medium
+#402309FF
+
+accent-bright
+#EB8220FF
+CMYK 00 60 100 0
